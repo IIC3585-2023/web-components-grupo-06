@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tree View</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script type="module" src="tree-item.js"></script>
+  </head>
+  <body>
+    <tree-item>
+      Motores de Bases de Datos
+      <tree-item slot="children">
+        Relacionales
+        <tree-item slot="children">
+          Open Source
+          <tree-item slot="children">MySQL</tree-item>
+          <tree-item slot="children">PostgreSQL</tree-item>
+        </tree-item>
+        <tree-item slot="children">
+          Propietarios
+          <tree-item slot="children">Oracle</tree-item>
+          <tree-item slot="children">SQL Server</tree-item>
+        </tree-item>
+      </tree-item>
+      <tree-item slot="children">
+        NoSQL
+        <tree-item slot="children">
+          Modelo Documentos
+          <tree-item slot="children">MongoDB</tree-item>
+          <tree-item slot="children">CouchDB</tree-item>
+        </tree-item>
+        <tree-item slot="children">
+          Modelo Grafos
+          <tree-item slot="children"
+            >Neo4J
+            <tree-item slot="children">Cypher</tree-item>
+            <tree-item slot="children">Gremlin</tree-item>
+          </tree-item>
+          <tree-item slot="children">SparQL</tree-item>
+        </tree-item>
+      </tree-item>
+    </tree-item>
+  </body>
+</html>
