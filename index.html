@@ -4,8 +4,20 @@
     <title>Tree View</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script type="module" src="tree-item.js"></script>
+    <script type="module" src="simple.js"></script>
   </head>
   <body>
+    <h1>Simple Component</h1>
+    <simple-component 
+      name="Product Ejemplo 1" rating="8" discount="42" price="129990">
+    </simple-component>
+    <simple-component 
+      name="Product Ejemplo 2" rating="4" discount="17"price="32990">
+    </simple-component>
+    <simple-component 
+      name="Product Ejemplo 3" rating="7">
+    </simple-component>
+    <h1>Tree View</h1>
     <tree-item>
       Motores de Bases de Datos
       <tree-item slot="children">
@@ -30,8 +42,7 @@
         </tree-item>
         <tree-item slot="children">
           Modelo Grafos
-          <tree-item slot="children"
-            >Neo4J
+          <tree-item slot="children">Neo4J
             <tree-item slot="children">Cypher</tree-item>
             <tree-item slot="children">Gremlin</tree-item>
           </tree-item>

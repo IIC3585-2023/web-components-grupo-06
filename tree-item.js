@@ -7,7 +7,6 @@ template.innerHTML = `
       margin: 10px 0;
       padding-left: 20px;
       font-family: Arial, sans-serif;
-      color: #333;
       line-height: 1.6;
       cursor: pointer;
       transition: color 0.3s;
