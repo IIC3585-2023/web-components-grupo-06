@@ -1,43 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tree View</title>
+    <title>Home</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script type="module" src="tree-item.js"></script>
+    <script type="module" src="./components/tree-item.js"></script>
+    <script type="module" src="./components/simple.js"></script>
   </head>
   <body>
-    <tree-item>
-      Motores de Bases de Datos
-      <tree-item slot="children">
-        Relacionales
-        <tree-item slot="children">
-          Open Source
-          <tree-item slot="children">MySQL</tree-item>
-          <tree-item slot="children">PostgreSQL</tree-item>
-        </tree-item>
-        <tree-item slot="children">
-          Propietarios
-          <tree-item slot="children">Oracle</tree-item>
-          <tree-item slot="children">SQL Server</tree-item>
-        </tree-item>
-      </tree-item>
-      <tree-item slot="children">
-        NoSQL
-        <tree-item slot="children">
-          Modelo Documentos
-          <tree-item slot="children">MongoDB</tree-item>
-          <tree-item slot="children">CouchDB</tree-item>
-        </tree-item>
-        <tree-item slot="children">
-          Modelo Grafos
-          <tree-item slot="children"
-            >Neo4J
-            <tree-item slot="children">Cypher</tree-item>
-            <tree-item slot="children">Gremlin</tree-item>
+    <ul>
+      <li><a class="active" href="/">Home</a></li>
+      <li><a href="/simple-component">Productos</a></li>
+      <li><a href="/complex-component">Continentes</a></li>
+    </ul>
+    <div id="home-info">
+      <div class="component">
+        <h1 class="component-title">Componente Sencilla</h1>
+        <simple-component
+          name="Ejemplo Producto" rating="8" discount="42" price="129990">
+        </simple-component>
+      </div>
+      <div class="component">
+        <h1 class="component-title">Componente Compleja</h1>
+        <tree-item>
+          Motores de Bases de Datos
+          <tree-item slot="children">
+            Relacionales
+            <tree-item slot="children">
+              Open Source
+              <tree-item slot="children">MySQL</tree-item>
+              <tree-item slot="children">PostgreSQL</tree-item>
+            </tree-item>
+            <tree-item slot="children">
+              Propietarios
+              <tree-item slot="children">Oracle</tree-item>
+              <tree-item slot="children">SQL Server</tree-item>
+            </tree-item>
           </tree-item>
-          <tree-item slot="children">SparQL</tree-item>
+          <tree-item slot="children">
+            NoSQL
+            <tree-item slot="children">
+              Modelo Documentos
+              <tree-item slot="children">MongoDB</tree-item>
+              <tree-item slot="children">CouchDB</tree-item>
+            </tree-item>
+            <tree-item slot="children">
+              Modelo Grafos
+              <tree-item slot="children">Neo4J
+                <tree-item slot="children">Cypher</tree-item>
+                <tree-item slot="children">Gremlin</tree-item>
+              </tree-item>
+              <tree-item slot="children">SparQL</tree-item>
+            </tree-item>
+          </tree-item>
         </tree-item>
-      </tree-item>
-    </tree-item>
+      </div>
+    </div>
   </body>
 </html>
