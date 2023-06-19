@@ -1,4 +1,8 @@
-import { LitElement, css, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import {
+  LitElement,
+  css,
+  html,
+} from "https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js";
 
 export class SimpleComponent extends LitElement {
   static properties = {
@@ -8,7 +12,7 @@ export class SimpleComponent extends LitElement {
     image: {},
     price: {},
   };
-  
+
   static styles = css`
     :host {
       font-family: Verdana, sans-serif;
@@ -16,21 +20,22 @@ export class SimpleComponent extends LitElement {
     }
 
     .badly-rated {
-      border: 7.5px solid #F55D3E;
+      border: 7.5px solid #f55d3e;
     }
 
-    .well-rated { 
-      border: 7.5px solid #007EA7;
+    .well-rated {
+      border: 7.5px solid #007ea7;
     }
 
     .product-card {
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: #FFFFFF;
+      background-color: #ffffff;
       border-radius: 15px;
       padding: 10px;
       margin: 10px;
+      width: 300px;
     }
 
     .product-name {
@@ -43,21 +48,21 @@ export class SimpleComponent extends LitElement {
     }
 
     .product-image {
-      width: 15vmax;
-      min-height: 15vmax;
-      max-height: auto;
       margin: 10px;
       padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .product-image img {
       max-width: 100%;
-      width: 20vw;
-      height: 20vw;
+      width: 200px;
+      height: 200px;
     }
 
     .rating {
-      color: #F8D23A;
+      color: #f8d23a;
       font-size: 2rem;
     }
 
@@ -65,7 +70,7 @@ export class SimpleComponent extends LitElement {
       text-decoration: line-through;
       text-decoration-color: black;
     }
-    
+
     .price-after {
       font-weight: bold;
       font-size: 2.5rem;
@@ -81,7 +86,7 @@ export class SimpleComponent extends LitElement {
       font-weight: bold;
       border-radius: 20px;
       border: 5px solid #000000;
-      background-color: #F8D23A;
+      background-color: #f8d23a;
       padding: 5px;
       margin-left: 50px;
     }
@@ -91,43 +96,45 @@ export class SimpleComponent extends LitElement {
     super();
     this.rating = 7;
     this.discount = 0;
-    this.name = 'Product Name';
-    this.image = 'https://via.placeholder.com/250';
-    this.price = '29990';
+    this.name = "Product Name";
+    this.image = "https://via.placeholder.com/250";
+    this.price = "29990";
   }
-  
-  cardTemplate(ratingTem, priceTem) { 
-    const color = this.rating >= 5 ? 'well-rated' : 'badly-rated';
+
+  cardTemplate(ratingTem, priceTem) {
+    const color = this.rating >= 5 ? "well-rated" : "badly-rated";
 
     return html`
       <div class="product-card ${color}">
         <p class="product-name">${this.name}</p>
         <div class="product-image">
-          <img src="${this.image}" alt="${this.name}">
+          <img src="${this.image}" alt="${this.name}" />
         </div>
-        ${ratingTem}
-        ${priceTem}
+        ${ratingTem} ${priceTem}
       </div>
-    `
+    `;
   }
 
   ratingTemplate() {
     function makeStars(rating) {
-      const stars = '★'.repeat(rating);
-      const noStars = '☆'.repeat(10 - rating);
+      const stars = "★".repeat(rating);
+      const noStars = "☆".repeat(10 - rating);
       return `${stars}${noStars}`;
     }
     return html`<p class="rating">${makeStars(this.rating)}</p>`;
   }
 
-  priceTemplate() { 
-    const finalPrice = Math.round(+this.price - (+this.price * +this.discount / 100));
+  priceTemplate() {
+    const finalPrice = Math.round(
+      +this.price - (+this.price * +this.discount) / 100
+    );
     return html`
-      ${this.discount > 0 ? html`
-        <div class="product-info">
-          <p class="price-before">$${this.price}</p>
-          <p class="discount-box">${this.discount}%</p>
-        </div>` : ''}
+      ${this.discount > 0
+        ? html` <div class="product-info">
+            <p class="price-before">$${this.price}</p>
+            <p class="discount-box">${this.discount}%</p>
+          </div>`
+        : ""}
       <p class="price-after">$${finalPrice}</p>
     `;
   }
@@ -139,4 +146,4 @@ export class SimpleComponent extends LitElement {
   }
 }
 
-customElements.define('simple-component', SimpleComponent);
+customElements.define("simple-component", SimpleComponent);

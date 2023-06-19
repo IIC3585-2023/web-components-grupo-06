@@ -1,10 +1,30 @@
 body {
   background-color: #333333;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+
+  /* justify-content: space-evenly; */
+}
+
+@media (max-width: 1500px) {
+  #products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  #products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  #products {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
