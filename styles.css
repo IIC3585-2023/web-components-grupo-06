@@ -2,3 +2,9 @@ body {
   background-color: #333333;
   color: #FFFFFF;
 }
+
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
