@@ -7,7 +7,7 @@ function getCLP(price) {
 
 async function getProducts() {
   try {
-    const response = await fetch("https://fakestoreapi.com/products?limit=25");
+    const response = await fetch("https://fakestoreapi.com/products");
     const data = await response.json();
 
     const items = document.querySelector("div#products");

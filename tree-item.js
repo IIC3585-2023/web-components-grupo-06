@@ -6,7 +6,7 @@ template.innerHTML = `
       display: block;
       margin: 10px 0;
       padding-left: 20px;
-      font-family: Arial, sans-serif;
+      font-family: Verdana, sans-serif;
       line-height: 1.6;
       cursor: pointer;
       transition: color 0.3s;
@@ -34,10 +34,10 @@ template.innerHTML = `
       display: block;
     }
     span {
-      font-size: 16px;
+      font-size: 1.25em;
     }
     :host([leaf]) span {
-      font-size: 14px;
+      font-size: 1.05em;
       font-style: italic;
       color: #666;
     }
