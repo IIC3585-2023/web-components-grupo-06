@@ -1,4 +1,4 @@
-import "./simple.js";
+import "../components/simple.js";
 
 function getCLP(price) {
   const convertionRate = 793;

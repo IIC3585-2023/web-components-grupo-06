@@ -1,4 +1,4 @@
-import "./tree-item.js";
+import "../components/tree-item.js";
 
 async function getCountries() {
   const response = await fetch('https://restcountries.com/v3.1/all')
